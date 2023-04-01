@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+body {
+    background-color: var(--Very-Light-Gray);
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    width: 950px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+}
+.container > p:first-of-type {
+    color: var(--Very-Dark-Blue);
+    text-align: center;
+    font-size: xx-large;
+}
+.container > p:nth-of-type(2) {
+    margin: 10px 0 20px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 600;
+}
+.container > p:last-of-type {
+    color: var(--Grayish-Blue);
+    width: 450px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: small;
+}
+.cards {
+    width: 950px;
+    height: 400px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3 ,1fr);
+    gap: 25px;
+}
+.cards div {
+    width: 300px;
+    height: 225px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 20px;
+    position: relative;
+}
+.cards div P:first-of-type {
+    font-size: large;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.cards div P:last-of-type {
+    width: 230px;
+    color: var(--Grayish-Blue);
+    font-size: x-small;
+}
+.cards img {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+.card1 {
+    border-top: 3px solid var(--Cyan);
+    transform: translateY(112.5px);
+}
+.card2 {
+    border-top: 3px solid var(--Red);
+}
+.card3 {
+    border-top: 3px solid var(--Blue);
+    transform: translateY(112.5px)
+}
+.card4 {
+    border-top: 3px solid var(--Orange);
+    grid-area: 2/2/3/3;
+}
+/* Mobile screen */
+@media (max-width: 427px) {
+    .container {
+        width: 350px;
+        height: 600px;
+    }
+    .container > p:last-of-type {
+        width: 270px;
+    }
+    .container > p:first-of-type {
+        font-size: larger;
+    }
+    .container > p:nth-of-type(2) {
+        font-size: larger;
+    }
+    .cards {
+        width: 350px;
+        height: 1200px;
+        display: flex;
+        flex-direction: column;
+    }
+    .cards div {
+        width: 340px;
+    }
+    .cards div P:last-of-type {
+        font-size: small;
+        width: 248px;
+    }
+    .card1 {
+        transform: translateY(0);
+    }
+    .card3 {
+        transform: translateY(0);
+    }
+}
